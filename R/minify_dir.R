@@ -14,9 +14,9 @@
 minifyJSDirectory <- function(directory, single_file = TRUE, minified_dir_name = directory,
                               minified_file_name = paste0(basename(directory), ".min.js")) {
   if (isTRUE(single_file)) {
-    minifyDirectory(directory, file.path(minified_dir_name, minified_file_name), "javascript")
+    minifyDirectory(directory, file.path(minified_dir_name, minified_file_name), "js")
   } else {
-    minifyMultipleFiles(directory, "javascript")
+    minifyMultipleFiles(directory, "js")
   }
 }
 
@@ -42,7 +42,7 @@ minifyHTMLDirectory <- function(directory, single_file = TRUE, minified_dir_name
   }
 }
 
-minifyDirectory <- function(directory, minified_file_name, language = c("javascript", "css", "html")) {
+minifyDirectory <- function(directory, minified_file_name, language = MINIFY_LANGUAGES) {
   if (!R.utils::isDirectory(directory)) {
     stop(directory, " doesn't exist")
   }
@@ -52,7 +52,7 @@ minifyDirectory <- function(directory, minified_file_name, language = c("javascr
   file_names <- list.files(directory, pattern = getSearchFileExtension(language), full.names = TRUE)
 
   if (length(file_names) == 0) {
-    message("No files found to minify")
+    message("No ", language, " files found to minify")
     return(NULL)
   }
 
@@ -64,7 +64,7 @@ minifyDirectory <- function(directory, minified_file_name, language = c("javascr
   minified_file_name
 }
 
-minifyMultipleFiles <- function(directory, language = c("javascript", "css", "html")) {
+minifyMultipleFiles <- function(directory, language = MINIFY_LANGUAGES) {
   if (!R.utils::isDirectory(directory)) {
     stop(directory, " doesn't exist")
   }

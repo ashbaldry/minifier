@@ -1,5 +1,8 @@
 #' Minify Code
 #'
+#' @description
+#' This...
+#'
 #' @param code Snippet of code to minify
 #' @param language Language of the code to minify. Options are \code{javascript}, \code{css}, \code{html}
 #'
@@ -9,13 +12,17 @@
 #' \url{https://www.toptal.com/developers/html-minifier/api}
 #'
 #' @export
-minify <- function(code, language = c("javascript", "css", "html")) {
+minify <- function(code, language = MINIFY_LANGUAGES) {
   language <- match.arg(language)
 
   if (language == "css") {
     url_separator <- ""
   } else {
     url_separator <- "-"
+  }
+
+  if (language == "js") {
+    language <- "javascript"
   }
 
   response <- httr::POST(

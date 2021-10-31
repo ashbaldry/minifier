@@ -8,7 +8,7 @@
 #' @rdname minifyFile
 #' @export
 minifyJSFile <- function(file_name) {
-  minifyFile(file_name, "javascript")
+  minifyFile(file_name, "js")
 }
 
 #' @rdname minifyFile

@@ -1,9 +1,5 @@
-getSearchFileExtension <- function(language) {
-  if (language == "javascript") {
-    extension <- "js"
-  } else {
-    extension <- language
-  }
+MINIFY_LANGUAGES <- c("html", "js", "css")
 
-  paste0("*.", extension, "$")
+getSearchFileExtension <- function(language) {
+  paste0("*.", language, "$")
 }

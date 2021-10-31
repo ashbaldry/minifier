@@ -4,7 +4,7 @@
 \alias{minify}
 \title{Minify Code}
 \usage{
-minify(code, language = c("javascript", "css", "html"))
+minify(code, language = MINIFY_LANGUAGES)
 }
 \arguments{
 \item{code}{Snippet of code to minify}
@@ -12,7 +12,7 @@ minify(code, language = c("javascript", "css", "html"))
 \item{language}{Language of the code to minify. Options are \code{javascript}, \code{css}, \code{html}}
 }
 \description{
-Minify Code
+This...
 }
 \seealso{
 \url{https://www.toptal.com/developers/javascript-minifier/api}

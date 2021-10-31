@@ -1,0 +1,9 @@
+Name: Minify Current File
+Description: Creates a minified version of active file in same directory.
+Binding: addinMinifyFile
+Interactive: false
+
+Name: Minify www Directory
+Description: Creates a minified version of JS and CSS files in the www folder of a shiny application.
+Binding: addinMinifyWWWDirectory
+Interactive: false
