@@ -1,38 +1,12 @@
-#' Minify File
-#'
-#' @param file_name Path to the file to be minified
-#'
-#' @rdname minifyFile
-#' @export
-minifyJSFile <- function(file_name) {
-  minifyFile(file_name, "javascript")
-}
-
-#' @rdname minifyFile
-#' @export
-minifyCSSFile <- function(file_name) {
-  minifyFile(file_name, "css")
-}
-
-#' @rdname minifyFile
-#' @export
-minifyHTMLFile <- function(file_name) {
-  minifyFile(file_name, "html")
-}
-
-minifyFile <- function(file_name, langauge) {
-  if (!file.exists(file_name)) {
-    stop(file_name, " doesn't exist")
-  }
-
-  code <- paste(readLines(file_name), collapse = "\n")
-  minify(code, langauge)
-}
-
 #' Minify Code
 #'
 #' @param code Snippet of code to minify
 #' @param language Language of the code to minify. Options are \code{javascript}, \code{css}, \code{html}
+#'
+#' @seealso
+#' \url{https://www.toptal.com/developers/javascript-minifier/api}
+#' \url{https://www.toptal.com/developers/cssminifier/api}
+#' \url{https://www.toptal.com/developers/html-minifier/api}
 #'
 #' @export
 minify <- function(code, language = c("javascript", "css", "html")) {

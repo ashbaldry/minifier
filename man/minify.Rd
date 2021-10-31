@@ -14,3 +14,8 @@ minify(code, language = c("javascript", "css", "html"))
 \description{
 Minify Code
 }
+\seealso{
+\url{https://www.toptal.com/developers/javascript-minifier/api}
+\url{https://www.toptal.com/developers/cssminifier/api}
+\url{https://www.toptal.com/developers/html-minifier/api}
+}
