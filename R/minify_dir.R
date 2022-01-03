@@ -25,7 +25,7 @@ minifyJSDirectory <- function(directory, single_file = TRUE, minified_dir_name =
 minifyCSSDirectory <- function(directory, single_file = TRUE, minified_dir_name = directory,
                                minified_file_name = paste0(basename(directory), ".min.css")) {
   if (isTRUE(single_file)) {
-    minifyDirectory(directory, minified_file_name, "css")
+    minifyDirectory(directory, file.path(minified_dir_name, minified_file_name), "css")
   } else {
     minifyMultipleFiles(directory, "css")
   }
@@ -36,7 +36,7 @@ minifyCSSDirectory <- function(directory, single_file = TRUE, minified_dir_name 
 minifyHTMLDirectory <- function(directory, single_file = TRUE, minified_dir_name = directory,
                                 minified_file_name = paste0(basename(directory), ".min.html")) {
   if (isTRUE(single_file)) {
-    minifyDirectory(directory, minified_file_name, "html")
+    minifyDirectory(directory, file.path(minified_dir_name, minified_file_name), "html")
   } else {
     minifyMultipleFiles(directory, "html")
   }
